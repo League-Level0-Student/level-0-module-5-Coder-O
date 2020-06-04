@@ -1,16 +1,24 @@
+  int locationA = 250;
+  int locationB = 1250;
 
 void setup() {
-  
+  size(1500,500);
+  background(200,200,200);
 }
 
 void draw() {
-  
-  // Go to the recipe to run the demonstration before starting this program
-  
-  /*
-  Use the code from your Bullseye program to draw the rings shown in this recipe.
-  You can use the noFill() command to make your ellipses transparent.
-  Make the rings move past each other.
-  When the rings hit the side of the sketch, make them reverse their direction.
-  */
+  noFill();
+  int size = 500;
+  background(200,200,200);
+  locationA = locationA + 1;
+  locationB = locationB - 1;
+  for(int i = 0; i < 50; i++) {
+    size = size - 10;
+    ellipse(locationA, 250, size, size);
+    ellipse(locationB, 250, size, size);
+  }
+  if(locationA == 1250) {
+    locationA = 250;
+    locationB = 1250;
+  }
 }
